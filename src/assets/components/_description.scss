@@ -1,0 +1,19 @@
+@use "../styles/utils/mixins";
+@use "../styles/utils/variables" as *;
+.description {
+  @include mixins.flex(column, null, null, null);
+  &__title {
+    @include mixins.font(500, 14px, 1.2, $yellow-tw-color, null);
+  }
+
+  &__area {
+    width: 262px;
+    height: 226px;
+    padding: 9px;
+    border: 1px solid $gray-bg-color;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 6px;
+    @include mixins.font(500, 11px, 1.2, $white-tw-color, null);
+  }
+}

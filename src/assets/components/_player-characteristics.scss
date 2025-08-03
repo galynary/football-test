@@ -1,0 +1,151 @@
+@use "../styles/utils/mixins";
+@use "../styles/utils/variables" as *;
+
+.character-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 124px;
+  height: 124px;
+}
+
+.characteristics {
+  @include mixins.flex(row, center, null, 8px);
+  width: fit-content;
+  &__content {
+    position: relative;
+    width: 410px;
+    height: 259px;
+    margin-top: 30px;
+  }
+  &__title {
+    text-align: center;
+    padding: 0px;
+  }
+  /* ----гравець----*/
+  &__inputs-player {
+    position: relative;
+  }
+  &__octagon {
+    display: flex;
+    background-color: rgba(241, 196, 15, 0.1);
+    transform: rotate(22deg);
+    clip-path: polygon(
+      29.29% 0%,
+      70.71% 0%,
+      100% 29.29%,
+      100% 70.71%,
+      70.71% 100%,
+      29.29% 100%,
+      0% 70.71%,
+      0% 29.29%
+    );
+  }
+  &__input-player {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    text-align: center;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: $white-tw-color;
+  }
+  &__button {
+    width: 82px;
+    @include mixins.font(500, 12px, 1.3, $yellow-tw-color, null);
+    background-color: $gray-bg-color;
+    border: 1px solid rgba($gray-lt-color, 0.4);
+    border-radius: 4px;
+    outline: none;
+    padding: 3px 0px 3px 0px;
+    cursor: pointer;
+  }
+  &__button:hover,
+  &__button:focus {
+    border: 1px solid rgba($gray-br-color, 0.8);
+    background-color: $yellow-tw-color;
+    color: $gray-bg-color;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__input {
+    @include mixins.font(400, 12px, 1.3, $white-tw-color, null);
+    width: 38px;
+    padding: 3px 6px 3px 6px;
+  }
+  &__input:focus {
+    border: 1px solid $yellow-bc-color;
+    background-color: rgba($white-th-color, 0.2);
+  }
+
+  /* ----менталітет-----*/
+  .mentality {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+  }
+  /* ----фізика-----*/
+  .physics {
+    position: absolute;
+    top: 57px;
+    left: 19px;
+  }
+  /* ----оборона-----*/
+  .defense {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+  }
+  /* ----атака-----*/
+  .attack {
+    position: absolute;
+    bottom: 57px;
+    left: 19px;
+  }
+  /* ----матч-рейт-----*/
+  .matrating {
+    position: absolute;
+    top: 57px;
+    right: 19px;
+  }
+  /* ----мислення-----*/
+  .thinking {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+  }
+  /* ----техніка-----*/
+  .technique {
+    position: absolute;
+    bottom: 57px;
+    right: 19px;
+  }
+  /* ----тактика-----*/
+  .tactics {
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+  }
+  .charact-top {
+    @include mixins.flex(column, center, center, 4px);
+  }
+}
+
+.gray-bgr {
+  background-color: rgba($gray-bg-color, 0.4);
+  border: 1px solid rgba($gray-lt-color, 0.4);
+  border-radius: 4px;
+  outline: none;
+}

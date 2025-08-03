@@ -1,0 +1,9 @@
+@use "../styles/utils/mixins";
+@use "../styles/utils/variables" as *;
+.input-text {
+  @include mixins.font(400, 14px, 1.2, $white-tw-color, null);
+  text-align: start;
+}
+.button {
+    
+}

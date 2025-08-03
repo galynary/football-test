@@ -1,0 +1,12 @@
+@use "./utils/mixins";
+@use "./utils/variables" as *;
+@use "../base/reset";
+@use "../base/common";
+@use "../layouts/header";
+@use "../components/container";
+@use "../components/rating-scale";
+@use "../components/description";
+@use "../components/form-select";
+@use "../components/football-container";
+@use "../components/player-characteristics";
+@use "../components/file-links";

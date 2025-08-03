@@ -1,0 +1,177 @@
+@use "../styles/utils/mixins";
+@use "../styles/utils/variables" as *;
+
+.wrap__select {
+  position: relative;
+}
+
+/*-------показники відомого гравця--------*/
+.wrap-form-input {
+  @include mixins.flex(column, null, null, null);
+}
+.form {
+  &__select {
+    width: 262px;
+    @include mixins.flex(column, null, null, null);
+  }
+  &__label {
+    // @include mixins.flex(column, null, null, null);
+    @include mixins.font(400, 12px, 1.5, $yellow-tw-color, null);
+    padding-bottom: 5px;
+    padding-left: 8px;
+  }
+
+  /* &__button {
+    background: transparent;
+    text-align: start;
+    padding: 5px;
+    width: 100%;
+    outline: none;
+    border: none;
+    @include mixins.font(500, 14px, 1.2, $white-tw-color, null);
+  }*/
+  &__icon {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 13px;
+    right: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+  &__inputs {
+    @include mixins.flex(row, null, center, 22px);
+  }
+  &__input {
+    width: 176px;
+    border-radius: 6px;
+    border: 1px solid $gray-bg-color;
+    background: transparent;
+    padding: 8px;
+    @include mixins.font(500, 14px, 1.2, $white-tw-color, null);
+    text-align: start;
+  }
+
+  &__label .minutes {
+    text-align: center;
+  }
+}
+
+.form-input-num {
+  width: 64px;
+  border-radius: 6px;
+  border: 1px solid $gray-bg-color;
+  background: transparent;
+  padding: 8px;
+  @include mixins.font(500, 14px, 1.2, $white-tw-color, null);
+  text-align: center;
+}
+.wrap-input {
+  position: relative;
+  display: inline-block;
+}
+.icon-input-left {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: none;
+}
+.icon-input-right {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  display: none;
+}
+.form__input:focus-visible ~ .icon-input-left,
+.form__input:focus-visible ~ .icon-input-right {
+  display: block;
+}
+.wrap_input-num {
+  position: relative;
+}
+.icon-line {
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  width: 8px;
+  height: 1px;
+  background-color: $red-color;
+  display: none;
+}
+.icon-line.left {
+  left: 0px;
+}
+.icon-line.right {
+  right: 0px;
+}
+.form-input-num:focus ~ .icon-line.left,
+.form-input-num:focus ~ .icon-line.right {
+  display: block;
+}
+/*----- форма select  -------*/
+
+.select .menu {
+  background-color: $white-tw-color;
+}
+.select .menu-option.selected {
+  background-color: $yellow-bc-color;
+}
+.select .control {
+  background-color: transparent;
+  min-height: 28px;
+  border-radius: 6px;
+  border: 1px solid $gray-bg-color;
+  position: relative;
+}
+.select .control.focused {
+  border-color: $yellow-tw-color;
+  box-shadow: none;
+}
+.select .search-input {
+  @include mixins.font(500, 14px, 1.2, $white-tw-color, null);
+  text-align: start;
+}
+.select .menu-option.focused {
+  background-color: transparent;
+}
+.select .menu-option:hover {
+  background-color: rgba($gray-br-color, 0.4);
+}
+.select .single-value {
+  color: $white-tw-color;
+}
+.select-minutes .single-value {
+  text-align: center;
+}
+.select .clear-button {
+  display: none;
+}
+
+.select .dropdown-icon {
+  color: $gray-bg-color;
+  position: relative;
+}
+
+.select .dropdown-icon::before,
+.select .dropdown-icon::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  width: 7px;
+  height: 1.5px;
+  background-color: $red-color;
+  transform: translateY(-50%);
+}
+
+.select .dropdown-icon::before {
+  left: -5px;
+}
+
+.select .dropdown-icon::after {
+  right: -5px;
+}
+
+.select.dropdown-icon.active {
+  transform: none;
+}

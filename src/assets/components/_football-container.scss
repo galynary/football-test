@@ -1,0 +1,88 @@
+@use "../styles/utils/mixins";
+@use "../styles/utils/variables" as *;
+.wrap-football-program {
+  max-width: 1600px;
+}
+.football {
+  @include mixins.flex(row, null, null, null);
+  width: 100%;
+  background-color: $gray-color;
+  &__wrap-content {
+    @include mixins.flex(column, null, null, null);
+    width: 100%;
+    flex: 1;
+    position: relative;
+  }
+  &__content {
+    margin-left: 5%;
+  }
+}
+.form {
+  max-width: 1035px;
+  @include mixins.flex(column, null, null, null);
+  margin-right: 100px;
+
+  &__container {
+    position: relative;
+    padding: 0px 25px;
+  }
+  /* &__content {
+    @include mixins.flex(row, space-between, null, 30px);
+    flex-wrap: wrap;
+    padding-top: 30px;
+  }*/
+  &__content {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 262px 398px 262px;
+    column-gap: 30px;
+    row-gap: 70px;
+  }
+  &__button {
+    display: inline-block;
+    background-color: $yellow-tw-color;
+    border: 1px solid rgb($gray-br-color, 08);
+    border-radius: 6px;
+    padding: 9px 68.5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 73px;
+    @include mixins.font(500, 14px, 1.2, $black-bt-color, null);
+  }
+
+  &__block {
+    position: relative;
+
+    @include mixins.flex(column, null, center, 67px);
+  }
+  .scale {
+    display: grid;
+    justify-self: center;
+  }
+  &__block.form-block {
+    gap: 30px;
+  }
+  &__block.player {
+    gap: 38px;
+  }
+}
+
+.form {
+  @media (max-width: 1200px) {
+    ::v-deep .form__content {
+      padding-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      justify-content: center;
+      margin-right: 0px;
+    }
+  }
+}
+@media (max-width: 920px) {
+  ::v-deep .football__content {
+    margin-left: 0px;
+  }
+}

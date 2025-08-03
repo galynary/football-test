@@ -1,40 +1,32 @@
 {
-  "name": "progect-car",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://galynary.github.io/progect-car/",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.3"
-  },
+  "name": "football-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://galynary.github.io/football-test/",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint:js": "eslint src/**/*.{js,jsx}"
+    "serve": "webpack serve --open --mode development",
+    "build": "webpack --mode production"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.5.17",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "sass": "^1.89.2",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "vue-loader": "^17.4.2",
+    "vue-style-loader": "^4.1.3",
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@babel/preset-env": "^7.28.0",
+    "@headlessui/vue": "^1.7.23",
+    "babel-loader": "^10.0.0",
+    "prettier": "^3.6.2",
+    "vue": "^3.5.17",
+    "vue3-select-component": "^0.11.8"
   }
 }

@@ -1,0 +1,75 @@
+@use "../styles/utils/mixins";
+@use "../styles/utils/variables" as *;
+/*Список посилань на відео*/
+.videoLinks {
+  &__content {
+    position: relative;
+    margin-top: 13px;
+    display: flex;
+    align-items: end;
+    gap: 13px;
+  }
+
+  &__btn {
+    background-color: $gray-bg-color;
+    border: 1px solid rgba($gray-br-color, 0.8);
+    padding: 8px;
+    border-radius: 6px;
+    //font-size: 24px;
+    color: $yellow-tw-color;
+    @include mixins.flex(row, center, center, null);
+  }
+
+  &__item {
+    display: flex;
+    gap: 29px;
+  }
+  &__link {
+    @include mixins.flex(column, null, null, 5px);
+  }
+  &__number {
+    @include mixins.font(400, 14px, 1.3, $gray-bg-color, null);
+  }
+}
+.video-files {
+  @include mixins.flex(column, null, null, 120px);
+}
+
+/*Список посилань на відео файли*/
+.fileLinks {
+  &__content {
+    margin-top: 7px;
+    @include mixins.flex(column, null, flex-end, 14px);
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+  }
+  &__download {
+    padding: 8px;
+    background-color: $gray-bg-color;
+    border: 1px solid rgba($gray-br-color, 0.8);
+    border-radius: 6px;
+    //font-size: 24px;
+    color: $yellow-tw-color;
+    @include mixins.flex(row, center, center, null);
+  }
+  &__btn {
+    background-color: $gray-bg-color;
+    border: 1px solid rgba($gray-br-color, 0.8);
+    border-radius: 6px;
+    padding: 9px 18px 9px 18px;
+    @include mixins.font(400, 12px, 1.5, $yellow-tw-color, null);
+  }
+  &__item {
+    display: flex;
+    gap: 29px;
+  }
+  &__link {
+    @include mixins.flex(column, null, null, 5px);
+  }
+  &__number {
+    @include mixins.font(400, 14px, 1.3, $gray-bg-color, null);
+  }
+}

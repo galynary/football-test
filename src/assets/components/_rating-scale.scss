@@ -1,0 +1,59 @@
+@use "../styles/utils/mixins";
+@use "../styles/utils/variables" as *;
+.scale {
+  @include mixins.flex(column, null, null, 11px);
+  width: 262px;
+  &__content {
+    @include mixins.flex(column, space-between, null, 15px);
+  }
+  &__label {
+    text-align: center;
+    @include mixins.font(500, 12px, 1.3, $yellow-tw-color, null);
+  }
+  &__level {
+    @include mixins.flex(row, space-between, null, null);
+  }
+  &__line {
+    position: relative;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $yellow-tw-color;
+  }
+  &__line::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 57px;
+    height: 15px;
+    width: 3px;
+    background-color: $yellow-tw-color;
+    transform: translateY(-50%);
+  }
+  &__line::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 57px;
+    height: 15px;
+    width: 3px;
+    background-color: $yellow-tw-color;
+    transform: translateY(-50%);
+  }
+
+  &__level-name {
+    @include mixins.font(500, 10px, 1.3, $white-tw-color, null);
+  }
+  &__values {
+    @include mixins.flex(row, space-between, null, null);
+  }
+  &__value {
+    width: 58px;
+    border: 1px solid rgba($gray-lt-color, 04);
+    background-color: rgba($gray-bg-color, 0.4);
+    border-radius: 6px;
+    padding: 5px;
+    @include mixins.font(500, 14px, 1.2, $white-tw-color, null);
+    text-align: center;
+  }
+}
