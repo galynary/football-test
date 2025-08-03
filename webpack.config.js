@@ -3,13 +3,15 @@ const { VueLoaderPlugin } = require("vue-loader");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { DefinePlugin } = require("webpack");
 
+const isProd = process.env.NODE_ENV === "production";
+
 module.exports = {
   entry: "./src/main.js",
 
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: process.env.NODE_ENV === "production" ? "/football-test/" : "/", // 🔁 для локального та продакшн
+    publicPath: isProd ? "/football-test/" : "/",
     clean: true,
   },
 
@@ -23,35 +25,13 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.vue$/,
-        loader: "vue-loader",
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: "babel-loader",
-      },
+      { test: /\.vue$/, loader: "vue-loader" },
+      { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" },
       {
         test: /\.scss$/,
         use: ["vue-style-loader", "css-loader", "sass-loader"],
       },
-      {
-        test: /\.svg$/,
-        oneOf: [
-          {
-            resourceQuery: /component/,
-            use: ["vue-loader", "vue-svg-loader"],
-          },
-          {
-            type: "asset/resource",
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        type: "asset/resource",
-      },
+      { test: /\.(png|jpe?g|gif|svg)$/i, type: "asset/resource" },
     ],
   },
 
@@ -59,7 +39,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      title: "Vue 3 App",
+      title: "Vue App",
     }),
     new DefinePlugin({
       __VUE_OPTIONS_API__: true,
@@ -77,5 +57,5 @@ module.exports = {
     open: true,
   },
 
-  mode: process.env.NODE_ENV || "development",
+  mode: isProd ? "production" : "development",
 };
