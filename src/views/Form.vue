@@ -1,6 +1,6 @@
 <script setup>
 import VueSelect from "vue3-select-component";
-import Title from "../components/Title.vue";
+
 import TrainingDescription from "../components/TrainingDescrip.vue";
 import RatingScale from "../components/RatingScale.vue";
 import FormInputPlayer from "../components/FormInputPlayer.vue";
@@ -63,8 +63,6 @@ const optionsProgCategory = [
 <template>
   <form class="form">
     <div class="form__container">
-      <Title title="СТВОРИТИ(норматив/вправу/завдання)" />
-
       <div class="form__content">
         <!-- Обрати завдання вік -->
         <div class="form__block">
